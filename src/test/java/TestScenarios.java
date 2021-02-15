@@ -15,6 +15,9 @@ import java.lang.*;
 
 public class TestScenarios {
 
+/*
+test_01 To check if we can access the users end point
+ */
     @Test
     void test_01() {
         Response response = RestAssured.get("https://jsonplaceholder.typicode.com/users");
@@ -25,7 +28,9 @@ public class TestScenarios {
         System.out.println( response.getStatusCode());
         Assert.assertEquals(statusCode,200);
     }
-
+    /*
+    test_02 To check if we can get the user with username='Delphine' from 'users' end point
+     */
     @Test
     void test_02()
     {
@@ -38,6 +43,9 @@ public class TestScenarios {
                  .statusCode(200);
     }
 
+    /*
+    test_03 To check if we can get the posts of the user 'Delphine' with userid 9 from 'Posts' end point
+     */
     @Test
     void test_03()
     {
@@ -55,6 +63,10 @@ public class TestScenarios {
     System.out.println(idOfAllposts.toString());
     System.out.println(idOfAllposts.size());
 }
+    /*
+        test_04 To check if we fetch the comments and validate if the emails in
+        comment section are in the proper format validate in 'Comments' end point
+         */
     @Test
     void test_04()
     {
